@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <pre>
+                        <h1>Fill in the following information</h1>
+
+            <label>Full Name</label>     <input type="text" placeholder="Enter your Full Name" id="fullname">
+
+            <label>Email</label>         <input type="email" placeholder="Enter your Email" id="validemail">
+
+            <label>Date of Birth</label>      <input type ="date" placeholder="Enter your Date of Birth" id="dob">
+
+            <label id="psd">Password</label>         <input type="password" placeholder="Enter your Password" id="password">
+
+            <label id="confirm">Confirm Password</label>  <input type="password" placeholder="Confirm your Password" id="confirmpassword">
+
+            <button type="submit">Save</button>   <button>Login</button>
+
+
+
+        </pre>
+       
+
+    </div>
+    <script>
+        
+        const choicepasswo= document.getElementById("psd");
+        const confirmpassword= document.getElementById("confirm");
+
+        choicepasswo.addEventListener("input", function validpassword(){
+
+            if(choicepasswo.value!=confirmpassword){
+                alert("Passwords must match with confirm password!");
+            }
+        })
+        
+
+    </script>
+</body>
+</html>
