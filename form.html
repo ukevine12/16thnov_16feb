@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        
+            padding-left: 350pt;
+        }
+        form{
+            
+            
+            border: 1pt solid;
+            border-color: rgb(175, 175, 175);
+            width:400pt;
+            border-radius: 6pt;
+            font-size: large;
+            
+            
+        }
+        
+        .log{
+            background-color: #131212;
+            color: white;
+            width: 100pt;
+        }
+        h1{
+            padding-left: 190pt;
+            padding-bottom: -19px;
+            margin: 0;
+            margin-bottom: 0;
+            
+        }
+        h2 {
+            padding-left: 130pt;
+            font-size: 12pt;
+            color: #464444;
+            margin: 0;
+            margin-top: -20pt
+        }
+        
+        .line{
+           display:flex;
+           align-items: center;
+           gap: 10px;
+           color: rgb(127, 128, 131);
+           font-size: medium;
+          padding-left: 55pt;
+           max-width: 300pt;
+        }
+        .line::before{
+            content: "";
+            height: 0.5pt;
+            
+            flex:1;
+            background-color: #666262;
+        }
+        .line::after{
+            content: "";
+            height: 0.5pt;
+            
+            flex:1;
+            background-color: #666262;
+        }
+        .if{
+            padding-left: 60pt;
+            color: #464444;
+        }
+        a{
+            color: #131212;
+            font-weight: bolder;
+        }
+        img{
+            width:15px;
+            padding-top: 0;
+        }
+        
+        
+        .first{
+            width: 60px;
+            padding-left: 70pt;
+            padding-top: 30pt;
+        }
+
+        #error-message{
+            align-items: center;
+            color: red;
+           padding-left: 57pt;
+            gap: 0;
+            margin-bottom: -10pt;
+            margin-top:-20pt;
+            display:none;
+        }
+        p{
+            margin: 0;
+        }
+        .xx{
+            margin-top: -50pt;
+        }
+        label{
+            font-weight: absolute lighter;
+        }
+        .ggg, .appl{
+            margin-top: -400pt;
+            background-color:white ;
+        }
+        .log,input,button{
+            width: 300pt;
+            height:22pt;
+            border-radius: 6pt;
+            border-color: rgb(21, 22, 22);
+        }
+        input,button{
+            border-style: groove; 
+        }
+        input:focus{
+            outline: none;
+            border: 2px solid black;
+            box-shadow:0 0 0 2px rgb(200, 198, 198);
+        }
+        .appp{
+            padding-left: 10pt;
+            font-size: medium;
+            font-weight: bold;
+        }
+        .pd{
+           margin-left: -30pt;
+           margin-top: -30pt;
+           width: 200pt; 
+        }
+        #logbutton{
+            background-color: #131212;
+            cursor: pointer;
+            color:white;
+
+        }
+        #logbutton:disabled{
+            cursor:not-allowed;
+            background-color: #a49898;
+            color: rgb(12, 12, 12);
+        }
+        .closed{
+            margin-left: -23pt;
+        }
+        
+
+        
+    
+</style>
+</head>
+
+<body>
+    <pre>
+        <form>
+                    <img class="first" src="lightning.jfif">
+                    <h1>Login</h1>
+                    <h2>Enter your details to login.</h2>
+        <label class="email">Email</label>
+
+        <input type="email" placeholder="Enter your Email" id="validemail" class="input">
+            
+        <p id="error-message" class="error">No account found with this email, please sign up.</p>
+        <label class="xx">Password</label>                    <label>Forget Password?</label>
+
+        <div class="pd">
+            <input placeholder="Enter your password" type="password"><img class="closed" src="eyebrow_9726390.png">
+        </div>    
+
+        <button class="log" id="logbutton"><a href="homepage.html"></a>Login</button>
+
+        <div class="line"><span>or</span></div>
+
+        <button class="ggg"><img src="google.jfif"><label class="appp"> Continue with Google</label></button>
+
+        <button class="appl"><img class="app" src="Apple2.jfif"><label class="appp"> Continue with Apple</label></button>
+
+        <p class="if">Don't have an account yet?  <a href="signup.html">Sign up</a></p>
+   
+        </form>
+
+    </pre>
+    
+    
+    <script>
+            const emailInput = document.getElementById("validemail");
+            const errorMessage = document.getElementById("error-message");
+            const email = "william@gmail.com";
+            const logButton=document.getElementById("logbutton");
+
+            emailInput.addEventListener("blur", function validateEmail(){
+                const userValue=emailInput.value.trim().toLowerCase();
+                
+                
+                if (emailInput.value==""){
+                    errorMessage.style.display = "none";
+                    logButton.disabled=false;
+                    return true;
+                    
+                } else if(emailInput.value!== email){
+                    errorMessage.style.display = "block";
+                    logButton.disabled=true;
+                    return false;
+                    
+                }else{
+                    errorMessage.style.display = "none";
+                    logButton.disabled=false;
+                    return true;
+                    
+                }
+
+                
+            });
+
+           
+
+        
+</script>
+</body>
+</html>

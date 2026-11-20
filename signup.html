@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding-left: 300pt;
+        }
+        label{
+            font-weight: lighter;
+            font-size: medium;
+        }
+        .btt{
+            height:20pt;
+            width: 90pt;
+        }
+        form{
+            border: 1px groove black;
+            border-style: groove;
+            border-width: 10pt;
+            padding: 100pt 100pt;
+
+            width:fit-content;
+           
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <pre>
+            <form>
+                <h1>Fill in the following information</h1>
+
+            <label>Full Name:</label>    <input type="text" placeholder="Enter your Full Name" id="fullname">
+
+                <label>Email:</label>     <input type="email" placeholder="Enter your Email" id="validemail">
+
+                <label>Date of Birth:</label>    <input type ="date" placeholder="Enter your Date of Birth" id="dob">
+
+            <label id="psd">Password:</label>    <input type="password" placeholder="Enter your Password" id="password">
+
+                <label id="confirm">Confirm Password:</label>  <input type="password" placeholder="Confirm your Password" id="confirmpassword">
+
+                        <button class="btt" type="submit">Save</button>      <button class="btt">Login</button>
+
+            </form>
+            
+        </pre>
+       
+
+    </div>
+    <script>
+        
+        const choicepasswo= document.getElementById("psd");
+        const confirmpassword= document.getElementById("confirm");
+
+        choicepasswo.addEventListener("input", function validpassword(){
+
+            if(choicepasswo.value!=confirmpassword){
+                alert("Passwords must match with confirm password!");
+            }
+        })
+        
+
+    </script>
+</body>
+</html>
